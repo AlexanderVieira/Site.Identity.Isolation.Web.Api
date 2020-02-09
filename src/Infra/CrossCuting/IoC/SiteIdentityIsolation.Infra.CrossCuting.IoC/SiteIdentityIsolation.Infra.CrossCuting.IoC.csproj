@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5260DEE9-726D-4F6F-A283-D34E52F16FDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SiteIdentityIsolation.Infra.CrossCuting.IoC</RootNamespace>
+    <AssemblyName>SiteIdentityIsolation.Infra.CrossCuting.IoC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator.NinjectAdapter.Unofficial, Version=3.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\CommonServiceLocator.NinjectAdapter.Unofficial.3.2.2.0\lib\Net40\CommonServiceLocator.NinjectAdapter.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Domain\Model\SiteIdentityIsolation.Domain.Model\SiteIdentityIsolation.Domain.Model.csproj">
+      <Project>{e15c4b88-9358-46a2-aa3d-b07ed8647aed}</Project>
+      <Name>SiteIdentityIsolation.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domain\Service\SiteIdentityIsolation.Domain.Service\SiteIdentityIsolation.Domain.Service.csproj">
+      <Project>{8109e5a1-2a75-474e-a001-7e118b694c80}</Project>
+      <Name>SiteIdentityIsolation.Domain.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data\MSSqlServer\SiteIdentityIsolation.Infra.Data.MSSqlServer\SiteIdentityIsolation.Infra.Data.MSSqlServer.csproj">
+      <Project>{9f7df30a-8e1e-48eb-ab74-eea000bb09ae}</Project>
+      <Name>SiteIdentityIsolation.Infra.Data.MSSqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data\Mysql\SiteIdentityIsolation.Infra.Data.Mysql\SiteIdentityIsolation.Infra.Data.Mysql.csproj">
+      <Project>{868fa30b-fcdd-4ffa-9997-9bec5502b3c9}</Project>
+      <Name>SiteIdentityIsolation.Infra.Data.Mysql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data\Postgres\SiteIdentityIsolation.Infra.Data.Postgres\SiteIdentityIsolation.Infra.Data.Postgres.csproj">
+      <Project>{3109baa3-8dcf-48a4-835c-27e1476790c9}</Project>
+      <Name>SiteIdentityIsolation.Infra.Data.Postgres</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data\SqLite\SiteIdentityIsolation.Infra.Data.SqLite\SiteIdentityIsolation.Infra.Data.SqLite.csproj">
+      <Project>{83b0955d-732e-4a13-bd0e-475eb4936a9e}</Project>
+      <Name>SiteIdentityIsolation.Infra.Data.SqLite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
