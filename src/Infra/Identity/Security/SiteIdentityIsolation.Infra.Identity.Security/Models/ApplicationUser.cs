@@ -37,7 +37,7 @@ namespace SiteIdentityIsolation.Infra.Identity.Security.Models
             // Adicionando Claims externos capturados no login
             if (ext != null)
             {
-                await SetExternalProperties(userIdentity, ext);
+                SetExternalProperties(userIdentity, ext);
             }
 
             // Gerenciamento de Claims para informaçoes do usuario
@@ -48,7 +48,7 @@ namespace SiteIdentityIsolation.Infra.Identity.Security.Models
             return userIdentity;
         }
 
-        private async Task SetExternalProperties(ClaimsIdentity identity, ClaimsIdentity ext)
+        private void SetExternalProperties(ClaimsIdentity identity, ClaimsIdentity ext)
         {
             if (ext != null)
             {
